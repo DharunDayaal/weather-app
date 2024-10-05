@@ -8,7 +8,7 @@
     <li>React.js</li>
     <li>Bootstrap</li>
     <li>Axios</li>
-    <li>WeatherAPI</li>
+    <li>SheCodes Weather API</li>
 </ul>
 
 <p>Visit App</p>
