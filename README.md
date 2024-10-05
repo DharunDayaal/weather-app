@@ -2,7 +2,7 @@
 
 <p>This repo consists of an weather application developed using React.js</p>
 
-# Technologies used
+<h1> Technologies used </h2>
 
 <ul>
     <li>React.js</li>
