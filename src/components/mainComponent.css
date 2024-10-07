@@ -26,11 +26,16 @@
 }
 
 .input-container button {
-    width: 6%;
+    width: 8%;
     height: 45px;
     border: 1px solid #84CEF5;
     background-color: #84CEF5;
-    border-radius: 30%;
+    border-radius: 20%;
+}
+
+.input-container button:hover {
+    background-color: #fff;
+    border-color: #fff;
 }
 
 .container {
@@ -40,6 +45,37 @@
     padding: 20px 15px;
     border: 1px solid #fff;
     border-radius: 34px;
-    box-shadow: 2px 0 16px 0 rgba(225, 225,225, 0.6);
+    box-shadow: 1px 0 16px 0 rgba(0, 0, 0, 0.6);
     background-color: #ffffff80;
+}
+
+.loader {
+    width: fit-content;
+    margin: 100px auto 50px auto;
+}
+
+.city {
+    width: fit-content;
+    margin: 1.8rem auto 0 auto;
+}
+
+.city h2 {
+    margin: 0;
+    font-size: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.date {
+    width: fit-content;
+    margin: 1rem auto 0 auto;
+}
+
+.date p {
+    margin: 0;
+    font-size: 19px;
+    font-style: italic;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
 }
