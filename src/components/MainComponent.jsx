@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import './mainComponent.css'
 import { ClipLoader } from 'react-spinners'
-import AnimatedWeather from 'react-animated-weather'
+import ReactAnimatedWeather from "react-animated-weather";
 import { IoSearchOutline } from 'react-icons/io5'
 
 const MainComponent = () => {
@@ -14,6 +14,7 @@ const MainComponent = () => {
   const [url, setUrl] = useState("");
   const [formattedDate, setFormattedDate] = useState("");
   const [loading, setLoading] = useState(false);
+  const [isCelsius, setIsCelsius] = useState(true)
 
   const handleCityInput = (e) => {
     setCityName(e.target.value);
@@ -53,6 +54,23 @@ const MainComponent = () => {
     setFormattedDate(formattedDate);
   }
 
+  const handleCelsiusToFarenhit = () => {
+    setIsCelsius(prevState => !prevState)
+  }
+
+  const convertCelsiusToFarenheit = (temp) => {
+    return Math.round(((temp * 9) / 5) + 32)
+  }
+
+  const handleTemperature = (temp) => {
+    if(isCelsius) {
+      return Math.round(temp)
+    }
+    else {
+      return convertCelsiusToFarenheit(temp)
+    }
+  }
+
   return (
     <>
       <div className="container">
@@ -72,16 +90,31 @@ const MainComponent = () => {
                 <p>{formattedDate}</p>
               </div>
               <div className="icon-deg">
+                <img className='icon' src={weatherData.daily[0].condition.icon_url} alt={weatherData.daily[0].condition.description} />
+                <p className='temperature'>{handleTemperature(weatherData.daily[0].temperature.day)}</p>
+                <sup className='cel-far' onClick={handleCelsiusToFarenhit}>
+                  {isCelsius ? "°C" : "°F"} | {isCelsius ? "°F" : "°C"}
+                </sup>
+              </div>
+              <div className='description'>
                 <p>{weatherData.daily[0].condition.description}</p>
-                <img src={weatherData.daily[0].condition.icon_url} alt={weatherData.daily[0].condition.description} />
               </div>
-              <div className="humi-wind">
-                <p>{weatherData.daily[0].wind.speed}m/s</p>
-                <p>Wind speed</p>
-                <p>{weatherData.daily[0].temperature.humidity}%</p>
-                <p>Humidity</p>
+              <div className="humi-wind row">
+                <div className="col-4 d-flex justify-content-center gap-2">
+                  <ReactAnimatedWeather icon="WIND" size="50"/>
+                  <div className="wind">
+                    <p>{weatherData.daily[0].wind.speed}m/s</p>
+                    <p>Wind speed</p>
+                  </div>
+                </div>
+                <div className="col-4 d-flex justify-content-center gap-2">
+                  <ReactAnimatedWeather icon="RAIN" size="40"/>
+                  <div className="humidity">
+                    <p>{weatherData.daily[0].temperature.humidity}%</p>
+                    <p>Humidity</p>
+                  </div>
+                </div>
               </div>
-              <p>Temperature: {weatherData.daily[0].temperature.day}°C</p>
             </>
           ) : (
             <div className='loader'>

@@ -79,3 +79,51 @@
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
 }
+
+.icon-deg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-deg .icon {
+    width: 110px;
+    margin: 0 8px 23px;
+}
+
+.icon-deg .temperature {
+    margin: 50px 0 0 0;
+    font-size: 70px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+}
+
+.cel-far {
+    cursor: pointer;
+    font-size: 23px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    user-select: none;
+}
+
+.description {
+    width: fit-content;
+    margin: 12px auto 18px;
+}
+
+.description p {
+    margin: 0;
+    font-size: 21px;
+    color: #f06789;
+    font-weight: 500;
+}
+
+.humi-wind {
+    margin: 0;
+    width: 100%;
+    margin: 40px 0 0;
+    padding: 0 20px;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+}
