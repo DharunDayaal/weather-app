@@ -121,9 +121,16 @@
 .humi-wind {
     margin: 0;
     width: 100%;
-    margin: 40px 0 0;
+    margin: 40px 0 2rem;
     padding: 0 20px;
     justify-content: space-evenly;
     align-items: center;
     align-content: center;
+}
+.wind p {
+    margin: 0;
+}
+
+.humidity p {
+    margin: 0;
 }

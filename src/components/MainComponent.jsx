@@ -101,7 +101,7 @@ const MainComponent = () => {
               </div>
               <div className="humi-wind row">
                 <div className="col-4 d-flex justify-content-center gap-2">
-                  <ReactAnimatedWeather icon="WIND" size="50"/>
+                  <ReactAnimatedWeather icon="WIND" size="40"/>
                   <div className="wind">
                     <p>{weatherData.daily[0].wind.speed}m/s</p>
                     <p>Wind speed</p>
